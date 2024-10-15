@@ -10,25 +10,20 @@ require("dotenv").config();
 
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then((res) => console.log("DB Connected Successfully!"))
+  .then(() => console.log("DB Connected Successfully!"))
   .catch((err) => console.log("Error While Connecting With DB:" + err));
 
-// const allowedOrigins = [
-//   "https://new-crypto-compass-f5lb.vercel.app/",
-//   "http://localhost:5173",
-//    // Add any other development origins if needed
-// ];
-
+// List of allowed origins including wildcard for Vercel subdomains
 const allowedOrigins = [
-  /\.vercel\.app$/,  // This allows any subdomain on vercel.app
-  "http://localhost:5173",
+  /https:\/\/.*\.vercel\.app$/, // Allow any Vercel subdomain
+  "http://localhost:5173", // Allow local development origin
 ];
-
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      // If no origin is provided (e.g., for non-browser requests) or the origin matches an allowed pattern
+      if (!origin || allowedOrigins.some((pattern) => pattern.test(origin))) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
@@ -38,27 +33,22 @@ app.use(
   })
 );
 
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', req.headers.origin); // Dynamically set origin
-  res.header('Access-Control-Allow-Credentials', 'true');
-  next();
-});
-
-
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Define routes
 app.use("/user", userRouter);
 app.use("/holding", holdingRouter);
 app.use("/transaction", transactionRouter);
 
 app.get("/", (req, res) => {
   res.json({
-    name: "Narendra Modi",
+    message: "Backend is accessible!",
   });
 });
 
+// Start server
 app.listen(3000, () => {
-  console.log("Server is running 🏃🏻‍♂️!");
+  console.log("Server is running 🏃🏻‍♂️ on port 3000!");
 });
