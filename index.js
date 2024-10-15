@@ -6,31 +6,29 @@ const holdingRouter = require("./routes/holding.routes");
 const transactionRouter = require("./routes/transaction.routes");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 mongoose
-  .connect(
-    "mongodb+srv://heelpatelcodes:FMoDNOGIemYtMvEm@crypto-compass-cluster.tdmka.mongodb.net/?retryWrites=true&w=majority&appName=Crypto-Compass-Cluster"
-  )
+  .connect(process.env.MONGODB_URI)
   .then((res) => console.log("DB Connected Successfully!"))
   .catch((err) => console.log("Error While Connecting With DB:" + err));
 
-  const allowedOrigins = [
-    "http://localhost:5173", // Add any other development origins if needed
-  ];
-  
+const allowedOrigins = [
+  "http://localhost:5173", // Add any other development origins if needed
+];
 
-  app.use(
-    cors({
-      origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error("Not allowed by CORS"));
-        }
-      },
-      credentials: true, // Allow cookies to be sent
-    })
-  );
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow cookies to be sent
+  })
+);
 
 app.use(cookieParser());
 app.use(express.json());
