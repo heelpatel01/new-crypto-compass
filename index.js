@@ -13,11 +13,17 @@ mongoose
   .then((res) => console.log("DB Connected Successfully!"))
   .catch((err) => console.log("Error While Connecting With DB:" + err));
 
+// const allowedOrigins = [
+//   "https://new-crypto-compass-f5lb.vercel.app/",
+//   "http://localhost:5173",
+//    // Add any other development origins if needed
+// ];
+
 const allowedOrigins = [
-  "https://new-crypto-compass-f5lb.vercel.app/",
+  /\.vercel\.app$/,  // This allows any subdomain on vercel.app
   "http://localhost:5173",
-   // Add any other development origins if needed
 ];
+
 
 app.use(
   cors({
@@ -31,6 +37,14 @@ app.use(
     credentials: true, // Allow cookies to be sent
   })
 );
+
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin); // Dynamically set origin
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 
 app.use(cookieParser());
 app.use(express.json());
