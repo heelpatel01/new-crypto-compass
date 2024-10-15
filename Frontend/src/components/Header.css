@@ -1,0 +1,6 @@
+.glow-effect {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 0.75rem;
+}
