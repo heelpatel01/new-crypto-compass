@@ -13,8 +13,9 @@ mongoose
   .then((res) => console.log("DB Connected Successfully!"))
   .catch((err) => console.log("Error While Connecting With DB:" + err));
 
-const allowedOrigins = [
-  "http://localhost:5173", // Add any other development origins if needed
+/* const allowedOrigins = [
+  "http://localhost:5173",
+   // Add any other development origins if needed
 ];
 
 app.use(
@@ -26,6 +27,16 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
+    credentials: true, // Allow cookies to be sent
+  })
+);
+
+*/
+
+
+app.use(
+  cors({
+    origin: '*', // Allow all origins
     credentials: true, // Allow cookies to be sent
   })
 );
