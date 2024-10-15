@@ -1,13 +1,10 @@
-// Blogs.js
 import React from "react";
-import { Typography, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 
 function Blogs() {
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         minHeight: "100vh",
         display: "flex",
         justifyContent: "center",
@@ -17,31 +14,40 @@ function Blogs() {
         color: "white",
       }}
     >
-      <Box>
-        <HourglassEmptyIcon
-          sx={{ fontSize: 60, color: "#ffcc00", mb: 2 }}
-          className="animate-spin"
-        />
-        <Typography variant="h3" component="h1" sx={{ mb: 2 }}>
-          Coming Soon!
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 4 }}>
+      <div>
+        <div
+          style={{
+            fontSize: "60px",
+            color: "#ffcc00",
+            marginBottom: "16px",
+            animation: "spin 2s linear infinite",
+          }}
+        >
+          ⌛
+        </div>
+        <h1 style={{ fontSize: "3rem", marginBottom: "16px" }}>Coming Soon!</h1>
+        <p style={{ fontSize: "1rem", marginBottom: "32px" }}>
           We're working hard to bring you exciting content. Stay tuned!
-        </Typography>
+        </p>
         <Link to="/" style={{ textDecoration: "none" }}>
-          <Button
-            variant="contained"
-            sx={{
+          <button
+            style={{
               backgroundColor: "#ffcc00",
               color: "#1a1d21",
-              "&:hover": { backgroundColor: "#e6b800" },
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontWeight: "bold",
             }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#e6b800")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#ffcc00")}
           >
             Go Back Home
-          </Button>
+          </button>
         </Link>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
 

@@ -1,13 +1,10 @@
-// ErrorPage.js
 import React from "react";
-import { Typography, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 function ErrorPage() {
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         minHeight: "100vh",
         display: "flex",
         justifyContent: "center",
@@ -17,31 +14,42 @@ function ErrorPage() {
         color: "white",
       }}
     >
-      <Box>
-        <ErrorOutlineIcon
-          sx={{ fontSize: 60, color: "#ff3b30", mb: 2 }}
-          className="animate-bounce"
-        />
-        <Typography variant="h3" component="h1" sx={{ mb: 2 }}>
+      <div>
+        <div
+          style={{
+            fontSize: "60px",
+            color: "#ff3b30",
+            marginBottom: "16px",
+            animation: "bounce 2s infinite",
+          }}
+        >
+          ⚠️
+        </div>
+        <h1 style={{ fontSize: "3rem", marginBottom: "16px" }}>
           404 - Page Not Found
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 4 }}>
-          Oops! The page youre looking for doesnt exist.
-        </Typography>
+        </h1>
+        <p style={{ fontSize: "1rem", marginBottom: "32px" }}>
+          Oops! The page you're looking for doesn't exist.
+        </p>
         <Link to="/" style={{ textDecoration: "none" }}>
-          <Button
-            variant="contained"
-            sx={{
+          <button
+            style={{
               backgroundColor: "#ffcc00",
               color: "#1a1d21",
-              "&:hover": { backgroundColor: "#e6b800" },
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontWeight: "bold",
             }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#e6b800")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#ffcc00")}
           >
             Go Back Home
-          </Button>
+          </button>
         </Link>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
 
