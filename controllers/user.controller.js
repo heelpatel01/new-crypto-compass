@@ -30,7 +30,11 @@ async function handleSignup(req, res) {
     user.save();
 
     if (user) {
-      res.cookie("userId", user._id, { httpOnly: true });
+      res.cookie("userId", user._id, {
+        httpOnly: true,
+        sameSite: "none",
+        secure: true,
+      });
       return res.status(200).json({
         success: true,
         message: "User Created Successfully",
@@ -73,7 +77,11 @@ async function handleLogin(req, res) {
       });
     }
 
-    res.cookie("userId", user._id, { httpOnly: true });
+    res.cookie("userId", user._id, {
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    });
 
     return res.status(200).json({
       success: true,
