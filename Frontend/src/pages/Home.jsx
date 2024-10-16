@@ -28,12 +28,12 @@ function Home() {
         {/* Glassmorphism Tiles Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Tile 1 */}
-          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-purple-400 transition-all duration-300 hover:scale-105">
+          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-purple-400 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500 to-transparent opacity-25 rounded-xl blur-xl"></div>
             <img
               src={virtualTrade}
               alt="Features"
-              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform hover:scale-110 duration-300"
+              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform duration-300"
             />
             <h3 className="text-2xl font-semibold text-blue-400 mb-2">
               Trade with Virtual Money
@@ -45,12 +45,12 @@ function Home() {
           </div>
 
           {/* Tile 2 */}
-          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-purple-400 transition-all duration-300 hover:scale-105">
+          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-purple-400 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-purple-500 to-transparent opacity-25 rounded-xl blur-xl"></div>
             <img
               src={chartImage}
               alt="Live Charts"
-              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform hover:scale-110 duration-300"
+              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform duration-300"
             />
             <h3 className="text-2xl font-semibold text-purple-400 mb-2">
               Live Cryptocurrency Charts
@@ -63,12 +63,12 @@ function Home() {
           </div>
 
           {/* Tile 3 */}
-          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-green-400 transition-all duration-300 hover:scale-105">
+          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-green-400 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-green-500 to-transparent opacity-25 rounded-xl blur-xl"></div>
             <img
               src={portFolioImage}
               alt="Portfolio"
-              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform hover:scale-110 duration-300"
+              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform duration-300"
             />
             <h3 className="text-2xl font-semibold text-green-400 mb-2">
               Build Your Portfolio
@@ -80,12 +80,12 @@ function Home() {
           </div>
 
           {/* Tile 4 */}
-          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-red-400 transition-all duration-300 hover:scale-105">
+          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-red-400 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-500 to-transparent opacity-25 rounded-xl blur-xl"></div>
             <img
               src="https://via.placeholder.com/150"
               alt="Secure"
-              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform hover:scale-110 duration-300"
+              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform duration-300"
             />
             <h3 className="text-2xl font-semibold text-red-400 mb-2">
               Safe and Secure (Coming Soon... (right now it is not secure🔒))
@@ -94,12 +94,12 @@ function Home() {
           </div>
 
           {/* Tile 5 */}
-          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-pink-400 transition-all duration-300 hover:scale-105">
+          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-pink-400 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-pink-500 to-transparent opacity-25 rounded-xl blur-xl"></div>
             <img
               src="https://via.placeholder.com/150"
               alt="Articles"
-              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform hover:scale-110 duration-300"
+              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform duration-300"
             />
             <h3 className="text-2xl font-semibold text-pink-400 mb-2">
               Learn with Articles
@@ -111,12 +111,12 @@ function Home() {
           </div>
 
           {/* Tile 6 */}
-          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-yellow-400 transition-all duration-300 hover:scale-105">
+          <div className="relative bg-gray-800 p-6 rounded-xl shadow-lg backdrop-blur-md bg-opacity-30 border border-solid border-transparent hover:border-yellow-400 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-yellow-500 to-transparent opacity-25 rounded-xl blur-xl"></div>
             <img
               src="https://via.placeholder.com/150"
               alt="Community"
-              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform hover:scale-110 duration-300"
+              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform transform duration-300"
             />
             <h3 className="text-2xl font-semibold text-yellow-400 mb-2">
               Join a Growing Community
