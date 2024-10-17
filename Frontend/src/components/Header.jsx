@@ -167,6 +167,23 @@ function Header() {
             >
               Blogs
             </NavLink>
+            {!universalLoggedin ? (
+              <NavLink
+                to="/signup"
+                className="bg-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-purple-700 transition-colors"
+                activeClassName="text-purple-500"
+                onClick={() => setMenuOpen(false)}
+              >
+                Get Started
+              </NavLink>
+            ) : (
+              <button
+                onClick={handleLogout}
+                className="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition-colors"
+              >
+                Logout
+              </button>
+            )}
           </nav>
         </div>
       )}
