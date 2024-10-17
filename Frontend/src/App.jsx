@@ -9,6 +9,7 @@ import Portfolio from "./pages/Portfolio"; // Import the Portfolio page componen
 import Blogs from "./pages/Blogs"; // Import the Blogs page component
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
