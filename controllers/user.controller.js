@@ -99,10 +99,16 @@ async function handleLogin(req, res) {
 
 async function handleLogout(req, res) {
   if (req.cookies.userId) {
-    return res.clearCookie("userId").json({
-      success: true,
-      message: "User loggedout successfully!",
-    });
+    return res
+      .clearCookie("userId", {
+        httpOnly: true,
+        sameSite: "none",
+        secure: true,
+      })
+      .json({
+        success: true,
+        message: "User loggedout successfully!",
+      });
   } else {
     return res.clearCookie("userId").json({
       success: true,
